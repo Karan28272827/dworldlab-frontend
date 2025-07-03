@@ -1,0 +1,63 @@
+.btn-toggle {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.btn-active {
+  background: #2563eb;
+  color: #fff;
+}
+.btn-inactive {
+  background: #e5e7eb;
+  color: #374151;
+}
+.btn-action {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.btn-start {
+  background: #22c55e;
+  color: #fff;
+}
+.btn-pause {
+  background: #eab308;
+  color: #fff;
+}
+.btn-reset {
+  background: #ef4444;
+  color: #fff;
+}
+.btn-lap {
+  background: #a21caf;
+  color: #fff;
+}
+.input-field {
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  outline: none;
+  transition:
+    border 0.2s,
+    box-shadow 0.2s;
+}
+.input-field:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px #2563eb33;
+}
+.error-message {
+  color: #dc2626;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+.status-message {
+  color: #16a34a;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}

@@ -1,0 +1,47 @@
+.tool-ui {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  max-width: 28rem;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+label {
+  font-weight: 600;
+  color: #2563eb;
+  margin-bottom: 0.25rem;
+}
+input[type="number"] {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+.glow-button {
+  background: #2563eb;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  box-shadow: 0 0 8px #2563eb44;
+  transition:
+    background 0.2s,
+    box-shadow 0.2s;
+  cursor: pointer;
+}
+.glow-button:hover {
+  background: #1d4ed8;
+  box-shadow: 0 0 16px #2563eb66;
+}
+.tool-output {
+  margin-top: 0.5rem;
+  color: #059669;
+  font-weight: 500;
+  min-height: 1.5rem;
+}
