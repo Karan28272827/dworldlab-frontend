@@ -1,25 +1,25 @@
 import React from "react";
 import "./App.css";
-import ImageConverter from "./components/ImageConverter";
-import PasswordGenerator from "./components/PasswordGenerator";
-import QrCodeGenerator from "./components/QrCodeGenerator";
-import WordCounter from "./components/WordCounter";
-import Base64Coder from "./components/Base64Coder";
-import TextToSpeech from "./components/TextToSpeech";
-import JsonFormatter from "./components/JsonFormatter";
-import ColorPicker from "./components/ColorPicker";
-import BmiCalculator from "./components/BmiCalculator";
-import AgeCalculator from "./components/AgeCalculator";
-import ImageCompressor from "./components/ImageCompressor";
-import ImageCropper from "./components/ImageCropper";
-import VideoConverter from "./components/VideoConverter";
-import AudioConverter from "./components/AudioConverter";
-import AudioTrimmer from "./components/AudioTrimmer";
-import EmiCalculator from "./components/EmiCalculator";
-import SipCalculator from "./components/SipCalculator";
-import SpeechToText from "./components/SpeechToText";
-import UnitConverter from "./components/UnitConverter";
-import TimerStopwatch from "./components/TimerStopwatch";
+import ImageConverter from "./components/ImageConverter.jsx";
+import PasswordGenerator from "./components/PasswordGenerator.jsx";
+import QrCodeGenerator from "./components/QrCodeGenerator.jsx";
+import WordCounter from "./components/WordCounter.jsx";
+import Base64Coder from "./components/Base64Coder.jsx";
+import TextToSpeech from "./components/TextToSpeech.jsx";
+import JsonFormatter from "./components/JsonFormatter.jsx";
+import ColorPicker from "./components/ColorPicker.jsx";
+import BmiCalculator from "./components/BmiCalculator.jsx";
+import AgeCalculator from "./components/AgeCalculator.jsx";
+import ImageCompressor from "./components/ImageCompressor.jsx";
+import ImageCropper from "./components/ImageCropper.jsx";
+import VideoConverter from "./components/VideoConverter.jsx";
+import AudioConverter from "./components/AudioConverter.jsx";
+import AudioTrimmer from "./components/AudioTrimmer.jsx";
+import EmiCalculator from "./components/EmiCalculator.jsx";
+import SipCalculator from "./components/SipCalculator.jsx";
+import SpeechToText from "./components/SpeechToText.jsx";
+import UnitConverter from "./components/UnitConverter.jsx";
+import TimerStopwatch from "./components/TimerStopwatch.jsx";
 
 const toolSections = [
   {
@@ -68,37 +68,21 @@ function App() {
       <header className="main-header">
         <h1>Idiot Minds – Multi Tool Hub (React)</h1>
       </header>
+
       <main>
         {toolSections.map((section) => (
-          <section
-            className="tool-section"
-            key={section.title}
-            style={{ marginBottom: 40 }}
-          >
-            <h2>{section.title}</h2>
-            <table
-              style={{
-                width: "100%",
-                borderCollapse: "separate",
-                borderSpacing: "2rem 1.5rem",
-              }}
-            >
-              <tbody>
-                <tr>
-                  {section.tools.map((tool) => (
-                    <td
-                      key={tool.name}
-                      style={{ verticalAlign: "top", minWidth: 350 }}
-                    >
-                      <h3 style={{ textAlign: "center", marginBottom: 10 }}>
-                        {tool.name}
-                      </h3>
-                      {tool.component}
-                    </td>
-                  ))}
-                </tr>
-              </tbody>
-            </table>
+          <section className="tool-section" key={section.title}>
+            <h2 className="tool-section-title">{section.title}</h2>
+            <div className="tool-section-grid">
+              {section.tools.map((tool) => (
+                <div key={tool.name} className="tool-entry">
+                  <h3 style={{ textAlign: "center", marginBottom: 10 }}>
+                    {tool.name}
+                  </h3>
+                  {tool.component}
+                </div>
+              ))}
+            </div>
           </section>
         ))}
       </main>
