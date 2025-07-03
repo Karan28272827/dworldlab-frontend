@@ -1,0 +1,71 @@
+.image-cropper-canvas {
+  border: 2px dashed #a21caf;
+  border-radius: 0.5rem;
+  background: #faf5ff;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  max-width: 100%;
+  display: block;
+}
+.crop-rect {
+  border: 2px solid #a21caf;
+  background: rgba(162, 28, 175, 0.08);
+  position: absolute;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+.crop-handle {
+  width: 12px;
+  height: 12px;
+  background: #a21caf;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 2;
+  pointer-events: auto;
+  cursor: pointer;
+}
+.crop-handle-nw {
+  top: -6px;
+  left: -6px;
+  cursor: nwse-resize;
+}
+.crop-handle-n {
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: ns-resize;
+}
+.crop-handle-ne {
+  top: -6px;
+  right: -6px;
+  cursor: nesw-resize;
+}
+.crop-handle-e {
+  top: 50%;
+  right: -6px;
+  transform: translateY(-50%);
+  cursor: ew-resize;
+}
+.crop-handle-se {
+  bottom: -6px;
+  right: -6px;
+  cursor: nwse-resize;
+}
+.crop-handle-s {
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: ns-resize;
+}
+.crop-handle-sw {
+  bottom: -6px;
+  left: -6px;
+  cursor: nesw-resize;
+}
+.crop-handle-w {
+  top: 50%;
+  left: -6px;
+  transform: translateY(-50%);
+  cursor: ew-resize;
+}
