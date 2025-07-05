@@ -46,6 +46,7 @@ const FAQSection = () => (
     </div>
     <div className="faq-footer">
       <h3 className="faq-footer-title">Still have questions?</h3>
+      <button className="contact-us-btn">Contact Us</button>
     </div>
   </section>
 );

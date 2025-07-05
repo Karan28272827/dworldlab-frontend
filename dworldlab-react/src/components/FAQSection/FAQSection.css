@@ -54,4 +54,30 @@
   font-size: 2rem;
   font-weight: 500;
   color: #181818;
+  margin-bottom: 24px;
+}
+
+.contact-us-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Montserrat", Arial, sans-serif;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.contact-us-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+}
+
+.contact-us-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
 }

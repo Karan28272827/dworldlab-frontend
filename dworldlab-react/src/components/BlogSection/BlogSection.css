@@ -1,6 +1,6 @@
 .blog-section {
   background: #151a15;
-  padding: 0 0 80px 0;
+  padding: 80px 60px;
   min-height: 100vh;
   color: #fff;
   display: flex;
@@ -10,8 +10,7 @@
 
 .blog-header {
   text-align: center;
-  margin-top: 60px;
-  margin-bottom: 48px;
+  margin-bottom: 60px;
 }
 
 .blog-label {
@@ -35,88 +34,82 @@
   font-family: "Montserrat", Arial, sans-serif;
 }
 
-.blog-cards {
+.blog-grid {
   display: flex;
   gap: 48px;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
-.blog-card {
-  background: #232823;
-  border-radius: 1rem;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
-  overflow: hidden;
-  width: 420px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding-bottom: 32px;
+.blog-article {
+  max-width: 500px;
+  text-align: left;
 }
 
-.blog-card-image {
+.blog-article-image {
   width: 100%;
-  height: 220px;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 16px;
   object-fit: cover;
 }
 
-.blog-card-meta {
+.blog-article-meta {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin: 20px 0 0 32px;
-  font-size: 1rem;
-  color: #bdbdbd;
+  font-size: 0.9rem;
+  color: #d1d5db;
   font-family: "Montserrat", Arial, sans-serif;
+  margin-bottom: 8px;
 }
 
-.blog-card-tag {
-  background: #232823;
-  color: #bdbdbd;
-  border-radius: 6px;
-  padding: 2px 10px;
-  font-size: 0.95rem;
+.blog-article-tag {
+  background-color: #3f3f46;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
   font-weight: 500;
 }
 
-.blog-card-dot {
-  font-size: 1.2rem;
-  color: #bdbdbd;
+.blog-article-dot {
+  margin: 0 8px;
+  font-size: 1rem;
 }
 
-.blog-card-time {
-  font-size: 0.95rem;
+.blog-article-time {
+  font-size: 0.85rem;
 }
 
-.blog-card-title {
-  font-family: "Montserrat", Arial, sans-serif;
+.blog-article-title {
   font-size: 1.35rem;
   font-weight: 600;
-  margin: 16px 0 0 32px;
-}
-
-.blog-card-desc {
-  font-size: 1.05rem;
-  color: #e0e0e0;
-  margin: 8px 0 0 32px;
+  color: #ffffff;
+  margin: 8px 0;
   font-family: "Montserrat", Arial, sans-serif;
 }
 
-.blog-card-link {
-  margin: 18px 0 0 32px;
-  color: #fff;
-  font-weight: 500;
-  font-size: 1.05rem;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  transition: color 0.2s;
+.blog-article-desc {
+  font-size: 1rem;
+  color: #d1d5db;
+  margin-bottom: 12px;
+  font-family: "Montserrat", Arial, sans-serif;
 }
 
-.blog-card-link:hover {
+.blog-article-link {
+  font-weight: 500;
+  color: white;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.blog-article-link:hover {
   color: #bdbdbd;
 }
 
 .arrow {
-  margin-left: 6px;
   font-size: 1.2rem;
 }

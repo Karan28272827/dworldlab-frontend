@@ -128,8 +128,8 @@ const Footer = () => (
       </div>
     </div>
     <div className="footer-bottom">
-      <div className="footer-copyright">
-        © 2025 Relume. All rights reserved.
+      <div className="footer-bottom-link">
+        © 2025 Resume. All rights reserved.
       </div>
       <div className="footer-bottom-links">
         <a href="#" className="footer-bottom-link">
@@ -141,13 +141,6 @@ const Footer = () => (
         <a href="#" className="footer-bottom-link">
           Cookie Settings
         </a>
-      </div>
-      <div className="footer-pagination">
-        <span className="footer-pagination-prev">&lt;</span>
-        <span className="footer-pagination-current">11</span>
-        <span className="footer-pagination-divider">/</span>
-        <span className="footer-pagination-total">15</span>
-        <span className="footer-pagination-next">&gt;</span>
       </div>
     </div>
   </footer>

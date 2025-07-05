@@ -157,10 +157,10 @@
   gap: 32px;
 }
 .footer-bottom-link {
-  color: #fff;
-  text-decoration: underline;
+  color: #ccc;
   font-size: 1rem;
 }
+
 .footer-pagination {
   display: flex;
   align-items: center;
