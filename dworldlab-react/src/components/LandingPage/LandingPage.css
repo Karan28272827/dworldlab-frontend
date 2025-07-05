@@ -1,0 +1,63 @@
+.landing-page {
+  height: 100vh;
+  background-image: url("../../../public/images/30.png"); /* Replace with actual image path */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: white;
+  text-align: center;
+}
+
+.overlay {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.4
+  ); /* Optional: darken background slightly */
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.overlay h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.overlay p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.explore-btn,
+.learn-btn {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.explore-btn {
+  background-color: white;
+  color: black;
+}
+
+.learn-btn {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid white;
+}

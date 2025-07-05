@@ -141,57 +141,57 @@ function VideoConverter() {
 
     // Initialize GIF.js
     // Check if GIF global is available (from CDN script)
-    if (typeof GIF === "undefined") {
-      setMessage(
-        "Error: gif.js library not loaded. Please ensure the CDN script is included.",
-      );
-      setLoading(false);
-      return;
-    }
+    // if (typeof GIF === "undefined") {
+    //   setMessage(
+    //     "Error: gif.js library not loaded. Please ensure the CDN script is included.",
+    //   );
+    //   setLoading(false);
+    //   return;
+    // }
+    //
+    // const gif = new GIF({
+    //   workers: 2, // Number of web workers to use for encoding
+    //   quality: 10, // Lower quality (higher number) means faster encoding, smaller file
+    //   width: video.videoWidth,
+    //   height: video.videoHeight,
+    //   workerScript: "https://unpkg.com/gif.js@0.2.0/gif.worker.js", // Path to the worker script
+    // });
 
-    const gif = new GIF({
-      workers: 2, // Number of web workers to use for encoding
-      quality: 10, // Lower quality (higher number) means faster encoding, smaller file
-      width: video.videoWidth,
-      height: video.videoHeight,
-      workerScript: "https://unpkg.com/gif.js@0.2.0/gif.worker.js", // Path to the worker script
-    });
-
-    gif.on("progress", (p) => {
-      setMessage(`Converting to GIF: ${Math.round(p * 100)}%`);
-    });
-
-    gif.on("finished", (blob) => {
-      const url = URL.createObjectURL(blob);
-      setGifUrl(url);
-      setLoading(false);
-      setMessage("GIF conversion complete!");
-    });
-
-    gif.on("error", (err) => {
-      setMessage(`GIF conversion failed: ${err.message}`);
-      setLoading(false);
-    });
-
-    // Capture frames for the GIF
-    for (let i = 0; i < totalFrames; i++) {
-      video.currentTime = i * frameInterval;
-      await new Promise((resolve) => {
-        video.onseeked = () => resolve();
-      });
-      const frameDataUrl = captureFrame(video, canvas);
-      if (frameDataUrl) {
-        // Add image data directly to gif.js
-        const img = new Image();
-        img.src = frameDataUrl;
-        await new Promise((resolve) => {
-          img.onload = resolve;
-        });
-        gif.addFrame(img, { delay: 1000 / frameRate }); // Delay in ms
-      }
-    }
-
-    gif.render();
+    //   gif.on("progress", (p) => {
+    //     setMessage(`Converting to GIF: ${Math.round(p * 100)}%`);
+    //   });
+    //
+    //   gif.on("finished", (blob) => {
+    //     const url = URL.createObjectURL(blob);
+    //     setGifUrl(url);
+    //     setLoading(false);
+    //     setMessage("GIF conversion complete!");
+    //   });
+    //
+    //   gif.on("error", (err) => {
+    //     setMessage(`GIF conversion failed: ${err.message}`);
+    //     setLoading(false);
+    //   });
+    //
+    //   // Capture frames for the GIF
+    //   for (let i = 0; i < totalFrames; i++) {
+    //     video.currentTime = i * frameInterval;
+    //     await new Promise((resolve) => {
+    //       video.onseeked = () => resolve();
+    //     });
+    //     const frameDataUrl = captureFrame(video, canvas);
+    //     if (frameDataUrl) {
+    //       // Add image data directly to gif.js
+    //       const img = new Image();
+    //       img.src = frameDataUrl;
+    //       await new Promise((resolve) => {
+    //         img.onload = resolve;
+    //       });
+    //       gif.addFrame(img, { delay: 1000 / frameRate }); // Delay in ms
+    //     }
+    //   }
+    //
+    //   gif.render();
   };
 
   return (

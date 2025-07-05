@@ -1,0 +1,123 @@
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background-color: #0a0e08;
+  color: #ffffff;
+}
+
+.container {
+  padding: 1rem;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: cursive;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links li {
+  cursor: pointer;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.join-btn {
+  background-color: #1a1e16;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+}
+
+.submit-btn {
+  background-color: #229cff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+}
+
+.main-content {
+  display: flex;
+  margin-top: 2rem;
+  gap: 2rem;
+}
+
+.tools-section,
+.articles-section {
+  flex: 1;
+}
+
+.tools-list,
+.articles-list {
+  list-style: none;
+  padding: 0;
+}
+
+.tools-list li,
+.articles-list li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+.tool-link {
+  color: inherit; /* Inherits text color from parent (likely white) */
+  text-decoration: none; /* Removes underline */
+}
+.icon {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  margin-top: 0.3rem;
+}
+
+.blog-sidebar {
+  width: 25%;
+  background-color: #1a1e16;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.blog-card {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.image-placeholder {
+  width: 100px;
+  height: 100px;
+  background-color: #ccc;
+}
+
+.blog-card h4 {
+  margin: 0;
+}
+
+.blog-card a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.more-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
