@@ -9,71 +9,77 @@ function UnitConverter() {
   const [errorMessage, setErrorMessage] = useState("");
 
   // Memoize units object
-  const units = useMemo(() => ({
-    length: {
-      meters: 1,
-      kilometers: 0.001,
-      centimeters: 100,
-      millimeters: 1000,
-      miles: 0.000621371,
-      yards: 1.09361,
-      feet: 3.28084,
-      inches: 39.3701,
-    },
-    mass: {
-      grams: 1,
-      kilograms: 0.001,
-      milligrams: 1000,
-      pounds: 0.00220462,
-      ounces: 0.035274,
-    },
-    temperature: {
-      celsius: {
-        toKelvin: (c) => c + 273.15,
-        toFahrenheit: (c) => (c * 9) / 5 + 32,
-        fromKelvin: (k) => k - 273.15,
-        fromFahrenheit: (f) => ((f - 32) * 5) / 9,
+  const units = useMemo(
+    () => ({
+      length: {
+        meters: 1,
+        kilometers: 0.001,
+        centimeters: 100,
+        millimeters: 1000,
+        miles: 0.000621371,
+        yards: 1.09361,
+        feet: 3.28084,
+        inches: 39.3701,
       },
-      fahrenheit: {
-        toKelvin: (f) => ((f - 32) * 5) / 9 + 273.15,
-        toCelsius: (f) => ((f - 32) * 5) / 9,
-        fromKelvin: (k) => ((k - 273.15) * 9) / 5 + 32,
-        fromCelsius: (c) => (c * 9) / 5 + 32,
+      mass: {
+        grams: 1,
+        kilograms: 0.001,
+        milligrams: 1000,
+        pounds: 0.00220462,
+        ounces: 0.035274,
       },
-      kelvin: {
-        toCelsius: (k) => k - 273.15,
-        toFahrenheit: (k) => ((k - 273.15) * 9) / 5 + 32,
-        fromCelsius: (c) => c + 273.15,
-        fromFahrenheit: (f) => ((f - 32) * 5) / 9 + 273.15,
+      temperature: {
+        celsius: {
+          toKelvin: (c) => c + 273.15,
+          toFahrenheit: (c) => (c * 9) / 5 + 32,
+          fromKelvin: (k) => k - 273.15,
+          fromFahrenheit: (f) => ((f - 32) * 5) / 9,
+        },
+        fahrenheit: {
+          toKelvin: (f) => ((f - 32) * 5) / 9 + 273.15,
+          toCelsius: (f) => ((f - 32) * 5) / 9,
+          fromKelvin: (k) => ((k - 273.15) * 9) / 5 + 32,
+          fromCelsius: (c) => (c * 9) / 5 + 32,
+        },
+        kelvin: {
+          toCelsius: (k) => k - 273.15,
+          toFahrenheit: (k) => ((k - 273.15) * 9) / 5 + 32,
+          fromCelsius: (c) => c + 273.15,
+          fromFahrenheit: (f) => ((f - 32) * 5) / 9 + 273.15,
+        },
       },
-    },
-    volume: {
-      liters: 1,
-      milliliters: 1000,
-      cubicMeters: 0.001,
-      gallons: 0.264172,
-      quarts: 1.05669,
-      pints: 2.11338,
-      cups: 4.22675,
-    },
-    time: {
-      seconds: 1,
-      minutes: 1 / 60,
-      hours: 1 / 3600,
-      days: 1 / (3600 * 24),
-      weeks: 1 / (3600 * 24 * 7),
-    },
-  }), []);
+      volume: {
+        liters: 1,
+        milliliters: 1000,
+        cubicMeters: 0.001,
+        gallons: 0.264172,
+        quarts: 1.05669,
+        pints: 2.11338,
+        cups: 4.22675,
+      },
+      time: {
+        seconds: 1,
+        minutes: 1 / 60,
+        hours: 1 / 3600,
+        days: 1 / (3600 * 24),
+        weeks: 1 / (3600 * 24 * 7),
+      },
+    }),
+    [],
+  );
 
   // Memoize getUnitCategory function
-  const getUnitCategory = useCallback((unit) => {
-    for (const category in units) {
-      if (units[category].hasOwnProperty(unit)) {
-        return category;
+  const getUnitCategory = useCallback(
+    (unit) => {
+      for (const category in units) {
+        if (units[category].hasOwnProperty(unit)) {
+          return category;
+        }
       }
-    }
-    return null;
-  }, [units]);
+      return null;
+    },
+    [units],
+  );
 
   // Memoize convertUnits function
   const convertUnits = useCallback(() => {

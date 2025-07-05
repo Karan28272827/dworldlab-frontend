@@ -32,6 +32,9 @@ import MoreTools from "./components/pages/MoreTools/MoreTools";
 import HomePage from "./components/HomePage/HomePage";
 import VersatileToolsLanding from "./components/VersatileToolsLanding/VersatileToolsLanding";
 import HowItWorks from "./components/HowItWorks/HowItWorks";
+import BlogSection from "./components/BlogSection/BlogSection";
+import FAQSection from "./components/FAQSection/FAQSection";
+import Footer from "./components/Footer/Footer";
 
 // HomePage is replaced by inline content
 // const toolSections = [
@@ -108,6 +111,10 @@ function App() {
               {/*         </section> */}
               {/*       ))} */}
               {/*     </main> */}
+
+              <BlogSection />
+              <FAQSection />
+              <Footer />
             </>
           }
         />
