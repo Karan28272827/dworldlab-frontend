@@ -1,11 +1,22 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { useScrollAnimation, staggerContainer } from "../../hooks/useScrollAnimation";
 import "./HomePage.css";
 import { Link } from "react-router-dom";
 
 const HomePage = () => {
+  const { ref: toolsRef, isInView: toolsInView } = useScrollAnimation(0.2);
+  const { ref: articlesRef, isInView: articlesInView } = useScrollAnimation(0.2);
+  const { ref: blogRef, isInView: blogInView } = useScrollAnimation(0.2);
+
   return (
     <div className="container">
-      <nav className="navbar">
+      <motion.nav 
+        className="navbar"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
         <div className="logo">Logo</div>
         <ul className="nav-links">
           <li>Home Tools</li>
@@ -17,12 +28,28 @@ const HomePage = () => {
           <button className="join-btn">Join</button>
           <button className="submit-btn">Submit</button>
         </div>
-      </nav>
+      </motion.nav>
 
       <div className="main-content">
-        <div className="tools-section">
-          <h2>Explore Our Tools</h2>
-          <ul className="tools-list">
+        <motion.div 
+          className="tools-section"
+          ref={toolsRef}
+          initial="hidden"
+          animate={toolsInView ? "visible" : "hidden"}
+          variants={staggerContainer}
+        >
+          <motion.h2
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+            }}
+          >
+            Explore Our Tools
+          </motion.h2>
+          <motion.ul 
+            className="tools-list"
+            variants={staggerContainer}
+          >
             {[
               [
                 "File Converters",
@@ -45,7 +72,13 @@ const HomePage = () => {
                 "/more-tools",
               ],
             ].map(([title, desc, path], idx) => (
-              <li key={idx}>
+              <motion.li 
+                key={idx}
+                variants={{
+                  hidden: { opacity: 0, x: -20 },
+                  visible: { opacity: 1, x: 0, transition: { duration: 0.5 } }
+                }}
+              >
                 <span className="icon">📦</span>
                 <div>
                   <Link to={path} className="tool-link">
@@ -53,53 +86,106 @@ const HomePage = () => {
                   </Link>
                   <p>{desc}</p>
                 </div>
-              </li>
+              </motion.li>
             ))}
-          </ul>{" "}
-        </div>
+          </motion.ul>
+        </motion.div>
 
-        <div className="articles-section">
-          <h2>Recent Articles</h2>
-          <ul className="articles-list">
+        <motion.div 
+          className="articles-section"
+          ref={articlesRef}
+          initial="hidden"
+          animate={articlesInView ? "visible" : "hidden"}
+          variants={staggerContainer}
+        >
+          <motion.h2
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+            }}
+          >
+            Recent Articles
+          </motion.h2>
+          <motion.ul 
+            className="articles-list"
+            variants={staggerContainer}
+          >
             {[
               ["Latest Tips", "Stay updated with our latest blog posts."],
               ["Tool Guides", "Learn how to use our tools effectively."],
               ["User Feedback", "Share your thoughts and suggestions with us."],
               ["Contact Us", "Reach out for support or inquiries."],
             ].map(([title, desc], idx) => (
-              <li key={idx}>
+              <motion.li 
+                key={idx}
+                variants={{
+                  hidden: { opacity: 0, x: 20 },
+                  visible: { opacity: 1, x: 0, transition: { duration: 0.5 } }
+                }}
+              >
                 <span className="icon">📦</span>
                 <div>
                   <strong>{title}</strong>
                   <p>{desc}</p>
                 </div>
-              </li>
+              </motion.li>
             ))}
-          </ul>
-        </div>
+          </motion.ul>
+        </motion.div>
 
-        <div className="blog-sidebar">
-          <h3>From Our Blog</h3>
-          <div className="blog-card">
+        <motion.div 
+          className="blog-sidebar"
+          ref={blogRef}
+          initial="hidden"
+          animate={blogInView ? "visible" : "hidden"}
+          variants={staggerContainer}
+        >
+          <motion.h3
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+            }}
+          >
+            From Our Blog
+          </motion.h3>
+          <motion.div 
+            className="blog-card"
+            variants={{
+              hidden: { opacity: 0, scale: 0.95 },
+              visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } }
+            }}
+          >
             <div className="image-placeholder" />
             <div>
               <h4>Tool Spotlight</h4>
               <p>Discover our featured tool of the week.</p>
               <a href="#">Read more</a>
             </div>
-          </div>
-          <div className="blog-card">
+          </motion.div>
+          <motion.div 
+            className="blog-card"
+            variants={{
+              hidden: { opacity: 0, scale: 0.95 },
+              visible: { opacity: 1, scale: 1, transition: { duration: 0.5, delay: 0.1 } }
+            }}
+          >
             <div className="image-placeholder" />
             <div>
               <h4>Tips & Tricks</h4>
               <p>Explore helpful tips for using our tools.</p>
               <a href="#">Read more</a>
             </div>
-          </div>
-          <button className="more-button">
+          </motion.div>
+          <motion.button 
+            className="more-button"
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.2 } }
+            }}
+          >
             Button <span>➤</span>
-          </button>
-        </div>
+          </motion.button>
+        </motion.div>
       </div>
     </div>
   );

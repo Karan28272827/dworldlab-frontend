@@ -1,55 +1,89 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { useScrollAnimation, staggerContainer } from "../../hooks/useScrollAnimation";
 import "./Footer.css";
 
-const Footer = () => (
-  <footer className="footer">
-    <div className="footer-contact">
-      <div className="footer-contact-item">
-        <div className="footer-contact-icon email" />
-        <div>
-          <div className="footer-contact-title">Email</div>
-          <div className="footer-contact-desc">
-            We value your feedback and suggestions to improve our tools.
+const Footer = () => {
+  const { ref, isInView } = useScrollAnimation(0.2);
+
+  return (
+    <footer className="footer">
+      <motion.div 
+        className="footer-contact"
+        ref={ref}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        variants={staggerContainer}
+      >
+              <motion.div 
+          className="footer-contact-item"
+          variants={{
+            hidden: { opacity: 0, x: -30 },
+            visible: { opacity: 1, x: 0, transition: { duration: 0.6 } }
+          }}
+        >
+          <div className="footer-contact-icon email" />
+          <div>
+            <div className="footer-contact-title">Email</div>
+            <div className="footer-contact-desc">
+              We value your feedback and suggestions to improve our tools.
+            </div>
+            <a
+              className="footer-contact-link"
+              href="mailto:support@utilityplatform.com"
+            >
+              support@utilityplatform.com
+            </a>
           </div>
-          <a
-            className="footer-contact-link"
-            href="mailto:support@utilityplatform.com"
-          >
-            support@utilityplatform.com
-          </a>
-        </div>
-      </div>
-      <div className="footer-contact-item">
-        <div className="footer-contact-icon phone" />
-        <div>
-          <div className="footer-contact-title">Phone</div>
-          <div className="footer-contact-desc">
-            Reach out to us for any inquiries or assistance.
+        </motion.div>
+        <motion.div 
+          className="footer-contact-item"
+          variants={{
+            hidden: { opacity: 0, x: -30 },
+            visible: { opacity: 1, x: 0, transition: { duration: 0.6, delay: 0.1 } }
+          }}
+        >
+          <div className="footer-contact-icon phone" />
+          <div>
+            <div className="footer-contact-title">Phone</div>
+            <div className="footer-contact-desc">
+              Reach out to us for any inquiries or assistance.
+            </div>
+            <a className="footer-contact-link" href="tel:+15551234567">
+              +1 (555) 123-4567
+            </a>
           </div>
-          <a className="footer-contact-link" href="tel:+15551234567">
-            +1 (555) 123-4567
-          </a>
-        </div>
-      </div>
-      <div className="footer-contact-item">
-        <div className="footer-contact-icon office" />
-        <div>
-          <div className="footer-contact-title">Office</div>
-          <div className="footer-contact-desc">
-            Visit us at our headquarters for any direct inquiries.
+        </motion.div>
+        <motion.div 
+          className="footer-contact-item"
+          variants={{
+            hidden: { opacity: 0, x: -30 },
+            visible: { opacity: 1, x: 0, transition: { duration: 0.6, delay: 0.2 } }
+          }}
+        >
+          <div className="footer-contact-icon office" />
+          <div>
+            <div className="footer-contact-title">Office</div>
+            <div className="footer-contact-desc">
+              Visit us at our headquarters for any direct inquiries.
+            </div>
+            <a
+              className="footer-contact-link"
+              href="https://maps.google.com/?q=456+Example+Ave,+New+York+NY+10001+US"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              456 Example Ave, New York NY 10001 US
+            </a>
           </div>
-          <a
-            className="footer-contact-link"
-            href="https://maps.google.com/?q=456+Example+Ave,+New+York+NY+10001+US"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            456 Example Ave, New York NY 10001 US
-          </a>
-        </div>
-      </div>
-    </div>
-    <div className="footer-main">
+        </motion.div>
+      </motion.div>
+      <motion.div 
+        className="footer-main"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+      >
       <div className="footer-newsletter">
         <div className="footer-logo">Logo</div>
         <div className="footer-newsletter-text">
@@ -126,24 +160,30 @@ const Footer = () => (
           </a>
         </div>
       </div>
-    </div>
-    <div className="footer-bottom">
-      <div className="footer-bottom-link">
-        © 2025 Resume. All rights reserved.
-      </div>
-      <div className="footer-bottom-links">
-        <a href="#" className="footer-bottom-link">
-          Privacy Policy
-        </a>
-        <a href="#" className="footer-bottom-link">
-          Terms of Service
-        </a>
-        <a href="#" className="footer-bottom-link">
-          Cookie Settings
-        </a>
-      </div>
-    </div>
-  </footer>
-);
+      </motion.div>
+      <motion.div 
+        className="footer-bottom"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+      >
+        <div className="footer-bottom-link">
+          © 2025 Resume. All rights reserved.
+        </div>
+        <div className="footer-bottom-links">
+          <a href="#" className="footer-bottom-link">
+            Privacy Policy
+          </a>
+          <a href="#" className="footer-bottom-link">
+            Terms of Service
+          </a>
+          <a href="#" className="footer-bottom-link">
+            Cookie Settings
+          </a>
+        </div>
+      </motion.div>
+    </footer>
+  );
+};
 
 export default Footer;

@@ -1,13 +1,35 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { useScrollAnimation, staggerContainer } from "../../hooks/useScrollAnimation";
 import styles from "./VersatileToolsLanding.module.css";
 
 const VersatileToolsLanding = () => {
+  const { ref, isInView } = useScrollAnimation(0.2);
+
   return (
     <div className={styles.toolssection}>
-      <h1>Discover Our Versatile Tools for Everyday Digital Tasks</h1>
+      <motion.h1
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        Discover Our Versatile Tools for Everyday Digital Tasks
+      </motion.h1>
 
-      <div className={styles.toolsgrid}>
-        <div className={styles.toolcard}>
+      <motion.div 
+        className={styles.toolsgrid}
+        ref={ref}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        variants={staggerContainer}
+      >
+        <motion.div 
+          className={styles.toolcard}
+          variants={{
+            hidden: { opacity: 0, y: 30 },
+            visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+          }}
+        >
           <h2>
             Effortlessly Convert, Calculate, and Utilize with Our Free Tools
           </h2>
@@ -18,9 +40,15 @@ const VersatileToolsLanding = () => {
           <a className={styles.toolcardlink} href="#">
             Launch &gt;
           </a>
-        </div>
+        </motion.div>
 
-        <div className={styles.toolcard}>
+        <motion.div 
+          className={styles.toolcard}
+          variants={{
+            hidden: { opacity: 0, y: 30 },
+            visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.1 } }
+          }}
+        >
           <h2>
             Transform Your Files Instantly <br />
             with Our Free Converters
@@ -31,9 +59,15 @@ const VersatileToolsLanding = () => {
           <a className={styles.toolcardlink} href="#">
             Convert &gt;
           </a>
-        </div>
+        </motion.div>
 
-        <div className={styles.toolcard}>
+        <motion.div 
+          className={styles.toolcard}
+          variants={{
+            hidden: { opacity: 0, y: 30 },
+            visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.2 } }
+          }}
+        >
           <h2>
             Calculate Your Metrics with Our <br />
             User-Friendly Calculators
@@ -44,8 +78,8 @@ const VersatileToolsLanding = () => {
           <a className={styles.toolcardlink} href="#">
             Calculate &gt;
           </a>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 };
