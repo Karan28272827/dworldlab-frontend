@@ -1,206 +1,240 @@
+/* =============================
+   Footer Component Stylesheet
+   =============================
+   Organized & Documented for Clarity
+   -----------------------------
+   Sections:
+   1. Imports & Base Styles
+   2. Contact Section
+   3. Main Footer Row (Logo, Nav, Newsletter)
+   4. Bottom Bar
+   5. Responsive Styles
+   ============================= */
+
+/* 1. Imports & Base Styles */
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
 .footer {
-  background: #10140f;
+  background: #101010;
   color: #fff;
   font-family: "Montserrat", Arial, sans-serif;
-  padding: 0 0 0 0;
+  padding: 0;
 }
 
+/* =============================
+   2. Contact Section (Top Black Bar)
+   ============================= */
 .footer-contact {
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
-  padding: 56px 0 40px 0;
-  background: #10140f;
-  border-bottom: 1px solid #232823;
+  padding: 64px 0 48px;
+  background: #000;
+  border-bottom: 1px solid #222;
+  flex-wrap: wrap;
+  gap: 32px;
 }
 
 .footer-contact-item {
   display: flex;
   align-items: flex-start;
-  gap: 18px;
-  max-width: 340px;
+  gap: 16px;
+  max-width: 300px;
 }
 
 .footer-contact-icon {
   width: 36px;
   height: 36px;
-  margin-top: 4px;
   border-radius: 50%;
-  background: #181c18;
-  display: inline-block;
+  background: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #fff;
 }
 .footer-contact-icon.email::before {
   content: "\2709";
-  display: block;
-  font-size: 1.5rem;
-  color: #fff;
-  text-align: center;
-  line-height: 36px;
 }
 .footer-contact-icon.phone::before {
   content: "\260E";
-  display: block;
-  font-size: 1.5rem;
-  color: #fff;
-  text-align: center;
-  line-height: 36px;
 }
 .footer-contact-icon.office::before {
   content: "\1F4CD";
-  display: block;
-  font-size: 1.5rem;
-  color: #fff;
-  text-align: center;
-  line-height: 36px;
-}
-.footer-contact-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 2px;
-}
-.footer-contact-desc {
-  font-size: 1rem;
-  color: #bdbdbd;
-  margin-bottom: 6px;
-}
-.footer-contact-link {
-  color: #fff;
-  font-size: 1rem;
-  text-decoration: underline;
 }
 
-.footer-main {
+.footer-contact-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.footer-contact-desc {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin-bottom: 4px;
+}
+.footer-contact-link {
+  color: #0073e6;
+  font-size: 0.95rem;
+  text-decoration: underline;
+}
+.footer-contact-link:hover {
+  color: #005bb5;
+}
+
+/* =============================
+   3. Main Footer Row (White Bar)
+   ============================= */
+.footer-main-row {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 48px 64px 0 64px;
-  background: #181c18;
+  padding: 48px 64px 32px;
+  background: #fff;
+  color: #000;
+  flex-wrap: wrap;
+  gap: 48px;
+  border-bottom: 1px solid #eaeaea;
 }
 
-.footer-newsletter {
-  max-width: 340px;
+/* --- Left: Logo & Navigation --- */
+.footer-main-left {
+  display: flex;
+  flex-direction: column;
+  flex: 1.5;
+  min-width: 320px;
 }
 .footer-logo {
   font-family: "Pacifico", cursive;
-  font-size: 2rem;
-  margin-bottom: 16px;
+  font-size: 2.2rem;
+  color: #000;
+  margin-bottom: 18px;
+  margin-top: 4px;
+}
+.footer-nav {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  margin-bottom: 0;
+}
+.footer-link {
+  color: #000;
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.footer-link:hover {
+  color: #0073e6;
+}
+
+/* --- Right: Newsletter Join --- */
+.footer-main-right {
+  flex: 1;
+  min-width: 280px;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 .footer-newsletter-text {
-  font-size: 1.1rem;
-  margin-bottom: 16px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #000;
+  align-self: flex-end;
 }
 .footer-newsletter-form {
   display: flex;
+  width: 100%;
   margin-bottom: 8px;
 }
 .footer-newsletter-input {
   flex: 1;
   padding: 10px 14px;
-  border: none;
-  border-radius: 2px 0 0 2px;
   font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
   outline: none;
+  background: #fff;
+  color: #000;
+}
+.footer-newsletter-input::placeholder {
+  color: #888;
 }
 .footer-newsletter-btn {
-  background: #444;
+  background: #232323;
   color: #fff;
   border: none;
-  border-radius: 0 2px 2px 0;
-  padding: 10px 22px;
+  padding: 10px 18px;
   font-size: 1rem;
+  font-weight: 500;
+  border-radius: 0 4px 4px 0;
   cursor: pointer;
   transition: background 0.2s;
 }
 .footer-newsletter-btn:hover {
-  background: #232823;
+  background: #0073e6;
+  color: #fff;
 }
 .footer-newsletter-privacy {
-  font-size: 0.95rem;
-  color: #bdbdbd;
-  margin-bottom: 12px;
+  font-size: 0.85rem;
+  color: #888;
+  max-width: 300px;
+  text-align: right;
+}
+.footer-newsletter-privacy a {
+  color: #0073e6;
+  text-decoration: underline;
 }
 
-.footer-links {
-  display: flex;
-  gap: 64px;
-}
-.footer-links-group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.footer-links-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-.footer-link {
-  color: #fff;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.2s;
-}
-.footer-link:hover {
-  color: #bdbdbd;
-}
-
+/* =============================
+   4. Bottom Bar (Legal & Copyright)
+   ============================= */
 .footer-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 32px 64px 24px 64px;
-  background: #10140f;
+  padding: 16px 64px 24px 64px;
+  background: #fff;
+  color: #000;
   font-size: 1rem;
+  flex-wrap: wrap;
+  gap: 32px;
 }
 .footer-bottom-links {
   display: flex;
   gap: 32px;
 }
 .footer-bottom-link {
-  color: #ccc;
-  font-size: 1rem;
+  color: #000;
+  text-decoration: none;
+  font-size: 01rem;
+}
+.footer-bottom-link:hover {
+  color: #0073e6;
 }
 
-.footer-pagination {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: #181c18;
-  border-radius: 16px;
-  padding: 2px 18px;
-  font-size: 1rem;
-}
-.footer-pagination-prev,
-.footer-pagination-next {
-  color: #bdbdbd;
-  font-size: 1.2rem;
-  cursor: pointer;
-}
-.footer-pagination-current {
-  color: #fff;
-  font-weight: 600;
-  margin: 0 2px;
-}
-.footer-pagination-divider {
-  color: #bdbdbd;
-  margin: 0 2px;
-}
-.footer-pagination-total {
-  color: #bdbdbd;
-}
-
-@media (max-width: 1100px) {
-  .footer-main {
+/* =============================
+   5. Responsive Styles
+   ============================= */
+@media (max-width: 900px) {
+  .footer-main-row {
     flex-direction: column;
-    gap: 48px;
-    align-items: flex-start;
-  }
-  .footer-links {
+    padding: 40px 24px;
     gap: 32px;
+  }
+  .footer-main-right {
+    align-items: flex-start;
+    width: 100%;
+    max-width: 100%;
+  }
+  .footer-newsletter-privacy {
+    text-align: left;
   }
   .footer-bottom {
     flex-direction: column;
-    gap: 16px;
     align-items: flex-start;
+    padding: 16px 24px 0 24px;
   }
 }
