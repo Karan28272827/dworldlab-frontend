@@ -1,0 +1,139 @@
+/* Add to your CSS file, ideally at the very top or in a global stylesheet */
+body {
+  background-color: #000000; /* Very dark gray for the entire page background */
+  color: #ffffff; /* Default text color for elements not otherwise specified */
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; /* Common system font stack for clean look, close to image */
+  margin: 0; /* Remove default body margin */
+  padding: 0; /* Remove default body padding */
+}
+
+.tool-container {
+  max-width: 1240px;
+  color: #000000;
+  background-color: #000000;
+  margin: 80px auto; /* Increased top/bottom margin for more spacing as seen in image */
+  padding: 0 40px;
+}
+
+.tool-header {
+  margin-bottom: 64px; /* Increased space below header for visual separation */
+  max-width: 800px; /* Slightly increased max-width for description */
+  /* No background-color needed here, it inherits from body */
+}
+
+.tool-subtitle {
+  font-size: 14px; /* Slightly larger, as seen in image */
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 12px;
+  color: #cccccc; /* Changed to a lighter gray for better contrast and match */
+}
+
+.tool-title {
+  font-size: 48px; /* Significantly larger to match the image's prominent title */
+  font-weight: 700;
+  line-height: 1.1; /* Tighter line height for large title */
+  margin-bottom: 20px;
+  color: #ffffff; /* Ensure title is white */
+}
+
+.tool-desc {
+  font-size: 18px; /* Slightly larger to match the image */
+  line-height: 1.6;
+  color: #cccccc; /* Changed to a lighter gray for better contrast and match */
+}
+
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* Adjusted minmax for slightly wider cards */
+  gap: 32px; /* Looks good, consistent with image */
+  margin-bottom: 64px; /* Looks good, consistent with image */
+}
+
+.tool-card_1 {
+  display: flex;
+  background-color: #000000; /* Slightly lighter dark gray for the cards as seen in image */
+  color: #ffffff; /* White text for card content */
+  flex-direction: column;
+  padding: 24px; /* Added padding inside the card */
+  border-radius: 8px; /* Rounded corners for the cards */
+  overflow: hidden; /* Important for images with border-radius */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+
+.tool-image {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* Good for responsiveness */
+  object-fit: cover;
+  border-radius: 6px; /* Slightly rounded corners for the image itself */
+  margin-bottom: 16px;
+}
+
+.tool-card_1-title {
+  font-size: 22px; /* Slightly larger for card titles */
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #ffffff; /* Ensure card titles are white */
+}
+
+.tool-card_1-desc {
+  font-size: 16px; /* Slightly larger for card descriptions */
+  color: #000000; /* Changed to a lighter gray for better contrast and match */
+  line-height: 1.5;
+}
+
+.tool-buttons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px; /* Increased gap for better visual separation */
+  margin-top: 20px; /* Add some space above buttons, though the main margin-bottom of grid handles most of it */
+}
+
+.launch-btn {
+  background-color: #333333; /* Darker background for "Launch" to match image */
+  border: 1px solid #555555; /* Subtle border as seen in image */
+  color: white;
+  padding: 14px 28px; /* Slightly more padding for a larger button */
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.launch-btn:hover {
+  background-color: #444444; /* Slightly lighter on hover */
+  border-color: #777777;
+}
+
+.try-btn {
+  background: none;
+  border: 1px solid #555555; /* Changed to a specific gray border to match image */
+  color: white;
+  padding: 14px 28px; /* Slightly more padding for a larger button */
+  border-radius: 6px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.try-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Subtle hover effect */
+  border-color: #777777;
+}
+
+.arrow-icon {
+  font-size: 18px; /* Slightly larger arrow */
+  transform: translateY(1px); /* Keep for fine-tuning vertical alignment */
+}

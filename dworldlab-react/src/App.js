@@ -30,11 +30,11 @@ import Calculators from "./components/pages/Calculators/Calculators";
 import Utilities from "./components/pages/Utilities/Utilities";
 import MoreTools from "./components/pages/MoreTools/MoreTools";
 import HomePage from "./components/HomePage/HomePage";
-import VersatileToolsLanding from "./components/VersatileToolsLanding/VersatileToolsLanding";
 import HowItWorks from "./components/HowItWorks/HowItWorks";
 import FAQSection from "./components/FAQSection/FAQSection";
 import Footer from "./components/Footer/Footer";
 import BlogSection from "./components/BlogSection/BlogSection";
+import ToolCategories from "./components/VersatileToolsLanding/ToolCategories";
 
 // HomePage is replaced by inline content
 // const toolSections = [
@@ -89,7 +89,7 @@ function App() {
               <HomePage />
               <LandingPage />
               <FeaturesPage />
-              <VersatileToolsLanding />
+              <ToolCategories />
               <HowItWorks />
               {/*     <header className="main-header"> */}
               {/*       <h1>Idiot Minds – Multi Tool Hub (React)</h1> */}
