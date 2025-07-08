@@ -132,9 +132,9 @@ export default function ToolDirectory() {
               <ul className="tool-list">
                 {category.tools.map((tool, i) => (
                   <li key={i} className="tool-item">
-                    <tool.icon className="tool-icon" strokeWidth={1.8} />
+                    <tool.icon className="tool-icon" strokeWidth={1.6} />
                     <div className="tool-text">
-                      <span className="tool-title">{tool.title}</span>
+                      <span className="tool-title_2">{tool.title}</span>
                       <span className="tool-description">
                         {tool.description}
                       </span>
@@ -145,8 +145,9 @@ export default function ToolDirectory() {
             </div>
           ))}
         </div>
+
         <div className="bottom-bar">
-          Ready to explore tools?{" "}
+          <span>Ready to explore tools?</span>
           <a href="#" className="signup-link">
             Sign up for free
           </a>

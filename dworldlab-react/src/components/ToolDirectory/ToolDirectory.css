@@ -54,10 +54,10 @@
   flex-direction: column;
 }
 
-.tool-title {
+.tool-title-2 {
   font-weight: 500;
   font-size: 0.95rem;
-  color: #ffffff;
+  color: #111827; /* Fixed: was white */
 }
 
 .tool-description {
@@ -72,12 +72,15 @@
   border-top: 1px solid #e5e7eb; /* gray-200 */
   font-size: 0.9rem;
   color: #374151; /* gray-700 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .signup-link {
   color: #065f46;
   font-weight: 500;
-  margin-left: 0.5rem;
   text-decoration: underline;
   transition: color 0.2s ease;
 }

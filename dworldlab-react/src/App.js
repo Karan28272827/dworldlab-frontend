@@ -35,6 +35,7 @@ import FAQSection from "./components/FAQSection/FAQSection";
 import Footer from "./components/Footer/Footer";
 import BlogSection from "./components/BlogSection/BlogSection";
 import ToolCategories from "./components/VersatileToolsLanding/ToolCategories";
+import SplitInfo from "./components/splitinfo/SplitInfo";
 
 // HomePage is replaced by inline content
 // const toolSections = [
@@ -111,6 +112,7 @@ function App() {
               {/*         </section> */}
               {/*       ))} */}
               {/*     </main> */}
+              <SplitInfo />
               <BlogSection />
               <FAQSection />
               <Footer />
